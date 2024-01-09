@@ -111,6 +111,6 @@
                 </executions>
             </plugin>
         </plugins>
-        <finalName>SuperPay</finalName>
+        <finalName>SuperAwesomeStore</finalName>
     </build>
 </project>

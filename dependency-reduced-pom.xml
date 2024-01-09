@@ -5,7 +5,7 @@
   <artifactId>SAStore</artifactId>
   <version>1.0-SNAPSHOT</version>
   <build>
-    <finalName>SuperPay</finalName>
+    <finalName>SuperAwesomeStore</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
