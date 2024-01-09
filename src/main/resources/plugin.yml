@@ -1,0 +1,10 @@
+name: SAStore
+version: "1.0.0"
+description: "Modtag betalinger hurtigt og nemt"
+main: hundeklemmen.nikolaialex05.SAStore
+authors: [Hundeklemmen]
+depend: [Skript]
+commands:
+  sastore:
+    description: Se informationer omkring SA-Store
+    usage: /sastore
