@@ -2,13 +2,12 @@ package hundeklemmen.nikolaialex05.classes;
 
 public class betaling {
     private String id;
-    private String spiller;
-    private String server;
-    private String uuid;
-    private String pakke;
 
-    private String pakkeNavn;
     private float amount;
+    private float quantity;
+    private String uuid;
+    private Product product;
+
 
     public String getId() {
         return id;
@@ -18,11 +17,13 @@ public class betaling {
         return uuid;
     }
 
-    public String getPakke() {
-        return pakke;
+    public Product getProduct() {
+        return product;
     }
 
-    public String getPakkeNavn() { return pakkeNavn; };
+    public float getQuantity() {
+        return quantity;
+    }
 
     public float getAmount() {
         return amount;

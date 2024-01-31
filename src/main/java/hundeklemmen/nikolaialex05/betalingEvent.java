@@ -1,10 +1,11 @@
-package hundeklemmen.nikolaialex05.Skript;
+package hundeklemmen.nikolaialex05;
 
+import hundeklemmen.nikolaialex05.classes.Product;
+import hundeklemmen.nikolaialex05.skriptHook.classes.id;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.bukkit.Bukkit;
 
 public class betalingEvent extends Event implements Cancellable {
 
@@ -12,18 +13,16 @@ public class betalingEvent extends Event implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
 
     private OfflinePlayer player;
-    private String pakke;
+    private Product product;
 
-    private String pakkeNavn;
     private float amount;
-    private String id;
+    private id id;
 
     private Boolean cancelled = false;
 
-    public betalingEvent(OfflinePlayer player, String pakke, String pakkeNavn, float amount, String id) {
+    public betalingEvent(OfflinePlayer player, Product product, float amount, id id) {
         this.player = player;
-        this.pakke = pakke;
-        this.pakkeNavn = pakkeNavn;
+        this.product = product;
         this.amount = amount;
         this.id = id;
     }
@@ -32,19 +31,15 @@ public class betalingEvent extends Event implements Cancellable {
         return this.player;
     }
 
-    public String getPakke() {
-        return pakke;
-    }
-
-    public String getPakkeNavn() {
-        return pakkeNavn;
+    public Product getProduct() {
+        return product;
     }
 
     public float getAmount() {
         return amount;
     }
 
-    public String getId(){
+    public id getId(){
         return id;
     }
 

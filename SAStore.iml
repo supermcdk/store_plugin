@@ -37,7 +37,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.8-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.bukkit:bukkit:1.8.8-R0.1-SNAPSHOT" level="project" />
     <orderEntry type="module-library">
-      <library name="Maven: com.github.SkriptLang:Skript:2.3.6">
+      <library name="Maven: com.github.SkriptLang:Skript:2.8.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/Skript.jar!/" />
         </CLASSES>
