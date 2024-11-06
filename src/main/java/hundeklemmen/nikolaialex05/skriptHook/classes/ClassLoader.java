@@ -8,6 +8,7 @@ import ch.njol.skript.registrations.Classes;
 import hundeklemmen.nikolaialex05.SAStore;
 import hundeklemmen.nikolaialex05.classes.Product;
 
+import hundeklemmen.nikolaialex05.classes.vote;
 import org.jetbrains.annotations.NotNull;
 
 public class ClassLoader {
@@ -77,5 +78,40 @@ public class ClassLoader {
         } catch (Exception ex) {
             SAStore.instance.getLogger().warning("Kunne ikke registrere skript product pga: " + ex.getMessage());
         }
+
+        try {
+            Classes.registerClass(new ClassInfo<>(vote.class, "vote")
+                    .defaultExpression(new EventValueExpression<>(vote.class))
+                    .user("vote")
+                    .name("vote")
+                    .description("vote")
+                    .parser(new Parser<vote>() {
+                        @Override
+                        public boolean canParse(@NotNull ParseContext context) {
+                            return false;
+                        }
+
+                        @Override
+                        public vote parse(@NotNull String arg0, @NotNull ParseContext arg1) {
+                            return null;
+                        }
+
+                        @NotNull
+                        @Override
+                        public String toString(vote arg0, int arg1) {
+                            return arg0.toString();
+                        }
+
+                        @NotNull
+                        @Override
+                        public String toVariableNameString(vote arg0) {
+                            return arg0.toString();
+                        }
+
+                    }).serializeAs(vote.class));
+        } catch (Exception ex) {
+            SAStore.instance.getLogger().warning("Kunne ikke registrere skript vote pga: " + ex.getMessage());
+        }
+
     }
 }

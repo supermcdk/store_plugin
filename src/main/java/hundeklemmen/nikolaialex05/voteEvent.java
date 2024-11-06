@@ -1,29 +1,24 @@
 package hundeklemmen.nikolaialex05;
 
-import org.bukkit.event.HandlerList;
-import hundeklemmen.nikolaialex05.classes.Product;
+import ch.njol.skript.util.Date;
 import hundeklemmen.nikolaialex05.skriptHook.classes.id;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
 
-public class betalingEvent extends Event implements Cancellable {
-
+public class voteEvent extends Event implements Cancellable {
 
     private static final HandlerList handlers = new HandlerList();
 
     private OfflinePlayer player;
-    private Product product;
-
-    private float amount;
+    private Date date;
     private id id;
-
     private Boolean cancelled = false;
 
-    public betalingEvent(OfflinePlayer player, Product product, float amount, id id) {
+    public voteEvent(OfflinePlayer player, Date date, id id) {
         this.player = player;
-        this.product = product;
-        this.amount = amount;
+        this.date = date;
         this.id = id;
     }
 
@@ -31,15 +26,11 @@ public class betalingEvent extends Event implements Cancellable {
         return this.player;
     }
 
-    public Product getProduct() {
-        return product;
+    public Date getDate() {
+        return date;
     }
 
-    public float getAmount() {
-        return amount;
-    }
-
-    public id getId(){
+    public id getId() {
         return id;
     }
 
