@@ -8,8 +8,7 @@ import org.json.simple.JSONObject;
 
 public class ResourceHandler {
 
-    //private static final String API_URL = "https://api.superawesome.dk/storeapi/v2";
-    public static final String API_URL = "http://localhost:80/storeapi/v2";
+    private static final String API_URL = "https://api.superawesome.dk/storeapi/v2";
 
     private String authorization;
 
