@@ -159,6 +159,10 @@ public class Utils {
         return response;
     }
 
+    public static double getTPSInt() {
+        return Double.parseDouble(getTPS().replace(",", "."));
+    }
+
     public static double getProcessCpuLoad() {
         Double response = null;
         try {
@@ -178,8 +182,15 @@ public class Utils {
         }
         return response;
     };
-
-    public static int getEnabledPlugins(Plugin[] plugins) {
-        return (int) Stream.of(plugins).filter(Plugin::isEnabled).count();
+    
+    public static double getMaxRam() {
+        return Runtime.getRuntime().maxMemory();
     }
+    public static double getUsedRam() {
+        return Runtime.getRuntime().totalMemory();
+    }
+    public static double getFreeRam() { return Runtime.getRuntime().freeMemory(); }
+    public static int getLoadedChunks() { return Bukkit.getWorlds().stream().mapToInt(world -> world.getLoadedChunks().length).sum();}
+    public static int getEntities() {return Bukkit.getWorlds().stream().mapToInt(world -> world.getEntities().size()).sum(); }
+    public static int getEnabledPlugins(Plugin[] plugins) { return (int) Stream.of(plugins).filter(Plugin::isEnabled).count(); }
 }

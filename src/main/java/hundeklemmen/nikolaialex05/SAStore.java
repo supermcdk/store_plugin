@@ -8,6 +8,7 @@ import hundeklemmen.nikolaialex05.Commands.SuperAwesomeStoreCommand;
 import hundeklemmen.nikolaialex05.classes.betaling;
 import hundeklemmen.nikolaialex05.classes.vote;
 import hundeklemmen.nikolaialex05.events.players;
+import hundeklemmen.nikolaialex05.resources.ResourceHandler;
 import hundeklemmen.nikolaialex05.skriptHook.classes.id;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -67,6 +68,7 @@ public class SAStore extends JavaPlugin {
         if(Bukkit.getPluginManager().getPlugin("Skript") != null && spigot.getBoolean("settings.bungeecord") == true && (config.getString("apikey") != null && !config.getString("apikey").equalsIgnoreCase(""))) {
 
             try {
+                new ResourceHandler(config.getString("apikey"));
                 skriptInstance = (Skript) Bukkit.getPluginManager().getPlugin("Skript");
                 try {
                     skriptAddon = Skript.registerAddon(instance);
