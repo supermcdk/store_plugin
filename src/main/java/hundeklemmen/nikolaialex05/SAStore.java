@@ -115,7 +115,6 @@ public class SAStore extends JavaPlugin {
                     @Override
                     public void run() {
                         for (betaling betal : betalinger) {
-                            System.out.println("Betaling: " + betal.getId());
                             Bukkit.getServer().getPluginManager().callEvent(
                                     new betalingEvent(
                                             Bukkit.getOfflinePlayer(
@@ -150,7 +149,6 @@ public class SAStore extends JavaPlugin {
                     @Override
                     public void run() {
                         for (vote vote : votes) {
-                            System.out.println("Vote: " + vote.getId());
                             Bukkit.getServer().getPluginManager().callEvent(
                                     new voteEvent(
                                             Bukkit.getOfflinePlayer(
